@@ -1,0 +1,224 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-color: wheat;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+header h1 {
+    color: white;
+    font-style: italic;
+    font-family: "Castellar";
+    text-decoration: underline gold;
+    margin-right: 20px; /* Space between title and the rest of the elements */
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Button styling */
+header button {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background-color: #333; /* Button hover effect */
+}
+
+/* Search bar styling */
+#searchbar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    width: 200px; /* Set initial width */
+}
+
+/* Adjusting the body content to account for the fixed header */
+
+
+/* Container to hold the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling each card */
+.card {
+    background-color: white;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+    border: 1px black solid;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image inside the card */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Title of the card */
+.card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Paragraph text inside the card */
+.card p {
+    color: black;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    display: block;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+
+.btn:hover {
+    background-color: gold;
+    display: block;
+    margin: auto;
+    color: black;
+    border: 1px black solid;
+}
+
+.card a {
+    text-decoration: none;
+}
+.scroll-left{
+height: 30px;
+background: rgb(255,215,0);
+background: linear-gradient(90deg, rgba(255,215,0,1) 14%, rgba(255,255,255,1) 25%, rgba(255,215,0,1) 56%, rgba(255,255,255,1) 78%, rgba(255,215,0,1) 100%);
+margin-top:3px;
+border: 2px black solid;
+}
+.scroll-left p{
+color: black;
+animation: scroll-left 15s linear infinite;
+transform:translateX(100%);
+
+
+}
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ 
+ }
+}
+/* Responsive styling */
+@media (max-width: 768px) {
+    .card {
+        width: 250px; /* Smaller cards for medium screens */
+    }
+
+    .btn {
+        padding: 8px 18px; /* Adjust button size */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full-width cards for small screens */
+    }
+
+    .btn {
+        width: 100%; /* Full-width button for small screens */
+        padding: 12px 0;
+    }
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the elements vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start of the container */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Adjust the font size of the header title */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add space below the title */
+    }
+
+    header button {
+        margin-top: 10px; /* Add some space above the button on smaller screens */
+    }
+
+    #searchbar {
+        width: 100%; /* Make the search bar full-width on smaller screens */
+        margin-top: 10px; /* Add space between the search bar and other elements */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Make the font size smaller for very small screens */
+        text-align: center; /* Center-align the title on small screens */
+    }
+
+    header button {
+        width: 100%; /* Make button full-width on smaller screens */
+        padding: 12px 0; /* Make the button taller */
+    }
+
+    #searchbar {
+        width: 100%; /* Make the search bar take the full width */
+        padding: 12px; /* Adjust padding for mobile */
+    }
+}
